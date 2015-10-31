@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             public void scroll(int y) {
                 // 若滑动坐标的绝对值即滑动距离不超过viewpager的高度的时候，设置viewpager回滚位置（相当于viewpager滑动的距离是ScrollView滑动距离的相反值，以保持viewpager固定）
                 // if ((y < 0 && -y <= DISPLAYW) || (y > 0 && y <= DISPLAYW)) {
+                    // 因为viewpager是可横向滚动的控件，所以需要按屏计算它的目前滚动宽度，滚动纵坐标即ScrollView的滚动纵坐标的相反值
+                    mViewPager.scrollTo(mViewPager.getCurrentItem() * DISPLAYW, -y);   // 此处存在一个问题  滑屏到中间位置的时候再滑动viewpager，会导致图片位置出错,可重写viewpager的滑动纠错
                 // }
-                // 因为viewpager是可横向滚动的控件，所以需要按屏计算它的目前滚动宽度，滚动纵坐标即ScrollView的滚动纵坐标的相反值
-                mViewPager.scrollTo(mViewPager.getCurrentItem() * DISPLAYW, -y);   // 此处存在一个问题  滑屏到中间位置的时候再滑动viewpager，会导致图片位置出错,可重写viewpager纠错
                 
             }
         });
