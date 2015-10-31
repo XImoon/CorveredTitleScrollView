@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ximoon.corveredtitlescrollview.MyScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/msv"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"></android.support.v4.view.ViewPager>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我是标题"
+            android:textSize="20sp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignBottom="@id/vp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_below="@id/vp"
+            android:background="@android:color/holo_red_dark"></LinearLayout>
+
+    </RelativeLayout>
+    
+</com.ximoon.corveredtitlescrollview.MyScrollView>
