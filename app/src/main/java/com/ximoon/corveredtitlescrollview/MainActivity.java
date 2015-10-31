@@ -43,7 +43,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mViewPager.setAdapter(new ImageAdapter());
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                // 当viewpager滑动的时候解决viewpager恢复相对于scrollview的坐标造成的显示失误
+                myScrollView.scrollTo(0,0);
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 
